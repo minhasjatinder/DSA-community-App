@@ -47,8 +47,9 @@ strong{
 }
 
 .cpContainer {
-  width: 50%;
-  height: 100%;
+  width: 60%;
+  height: 85%;
+  margin : 2px 30px;
   justify-content: center;
   padding: 20px;
   background-color: rgb(15, 5, 63);
