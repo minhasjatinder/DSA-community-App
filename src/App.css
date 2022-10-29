@@ -39,16 +39,17 @@ strong{
   color:#413e3e;
 }
 .createPostPage {
-  margin:10px 10px;
+  
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 100%;
   display: flex;
+  justify-content: center;
   align-content: center;
 }
 
 .cpContainer {
   width: 60%;
-  height: 85%;
+  height: 100%;
   margin : 2px 30px;
   justify-content: center;
   padding: 20px;
@@ -169,7 +170,7 @@ textarea {
 .homePage .post {
   width: 70%;
   height: auto;
-  max-height: 600px;
+  max-height: 700px;
   background-color: rgb(10, 15, 56);
   box-shadow: rgb(84, 120, 177) 2px 6px 10px;
   margin: 20px 20px;
@@ -180,8 +181,11 @@ textarea {
 
 .post .postHeader {
   display: flex;
-  justify-content: center;
+  justify-content:space-between;
+  align-items: center;
   width: 100%;
+  overflow-y:hidden;
+
   
 
 }
@@ -191,31 +195,43 @@ textarea {
 .postHeader .title {
   text-decoration:solid;
   color:rgb(157, 172, 215);
-  flex: 50%;
+  
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .postHeader .deletePost {
-  flex: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  
+  margin-right: 30px;
 }
 
 .deletePost button {
   border: none;
-
+  
   background: none;
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
   color:rgb(111, 43, 43);
 }
 
 .post .postTextContainer {
   word-wrap: break-word;
+  font-weight: lighter;
   height: auto;
   max-height: 400px;
   width: 100%;
-  color:rgb(64, 65, 168);
+  color:rgb(162, 162, 166);
   overflow: hidden;
   overflow-y: auto;
+}
+.wrapper {
+  padding: 10px;
+}
+
+.image--cover {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 20px;
+
+  object-fit: cover;
+  object-position: center right;
 }

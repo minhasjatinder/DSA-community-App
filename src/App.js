@@ -6,11 +6,12 @@ import Login from "./pages/Login";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
-
+import {  useAuth } from "./firebase-config";
+import Button from "@mui/material/Button" ;
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
-
+  const currentUser = useAuth() ;
   const signUserOut = () => {
     signOut(auth).then(() => {
  
@@ -29,22 +30,29 @@ function App() {
         height: "100%"
       }}>
       <Router>
-      <nav>
+      <nav style = {{display:"flex",justifyContent:"center"}}>
         <Link to="/"> Home </Link>
 
         {!isAuth ? (
           <Link to="/login"> Login </Link>
         ) : (
           <>
-            <Link to="/createpost"> Post Challenge</Link>
-            <button id = "log-out-button" onClick={signUserOut}> Log Out</button>
+            <Link to="/createpost"> Create</Link>
+            <Button id = "log-out-button" onClick={signUserOut} variant="outlined">LogOut</Button> 
           </>
         )}
+
+        {
+          isAuth ?(<div class = "wrapper " style = {{ display :"flex " , justifyContent:"space-between"}}>
+        <img  class = "image--cover " src = {currentUser?currentUser.photoURL:"#"}></img>
+        </div>):(<span></span>)
+        }
       </nav>
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+        
       </Routes>
     </Router>
     </div>

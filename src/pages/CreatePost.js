@@ -15,7 +15,7 @@ function CreatePost({ isAuth }) {
       title,
       postText,
       link,
-      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid   , profilePic :auth.currentUser.photoURL},
     });
     navigate("/");
   };
@@ -29,7 +29,7 @@ function CreatePost({ isAuth }) {
   return (
     <div className="createPostPage">
       <div className="cpContainer">
-        <h1> Post Challenge </h1>
+        <h1> Hey Techie ! What you wanna share</h1>
         <div className="inputGp">
           <label> Title:</label>
           <input
@@ -47,8 +47,9 @@ function CreatePost({ isAuth }) {
               setPostText(event.target.value);
             }}
           />
-          <label> Question Link:</label>
-          <input type = "url"onChange={(event) => {
+          
+          <label>Relevant Material:</label>
+          <input type = "text"onChange={(event) => {
               setLink(event.target.value);
             }}></input>
           

@@ -16,7 +16,7 @@ function Login({ setIsAuth }) {
 
   return (
     <div className="loginPage">
-      <p style={{color:"black" }}><h1><strong>DSA Practice</strong></h1></p>
+      <p style={{color:"black" }}><h1><strong>TechBlogs</strong></h1></p>
       <button className="login-with-google-btn" onClick={signInWithGoogle}>
         Sign in with Google
       </button>
